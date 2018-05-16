@@ -1,4 +1,4 @@
-package com.numismatics.configuration;
+package com.numismatics.model;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
