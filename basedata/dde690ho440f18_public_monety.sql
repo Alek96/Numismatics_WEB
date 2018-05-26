@@ -1,0 +1,1 @@
+INSERT INTO public.monety (id, nazwa, waga, proba, cena, kruszec_id, stan_id, rok, opis, mennica_id, panujacy_id, kraj_id, literatura) VALUES ('F280341', 'Trojak', 1, 1, 1, 2, 4, 1588, 'Piękne tło i detale. NIENOTOWANA U IGERA odmiana.', 2, 1, 1, 'podobny do Iger R.88.1.a (R1) - kropka przed SIG na awersie oraz inna interpunkcja na rewersie');

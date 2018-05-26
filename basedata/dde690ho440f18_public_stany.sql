@@ -1,0 +1,11 @@
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (1, '1-', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (2, '1', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (3, '2-', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (4, '2', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (5, '2+', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (6, '3-', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (7, '3', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (8, '4', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (9, '5', 1);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (10, 'L-', 2);
+INSERT INTO public.stany (id, nazwa, typ_id) VALUES (11, 'L', 2);
