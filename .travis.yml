@@ -1,0 +1,16 @@
+language: java
+jdk: oraclejdk8
+sudo: false
+addons:
+  apt:
+    packages:
+    - oracle-java8-installer
+cache:
+  directories:
+  - "$HOME/.m2"
+before_install:
+- chmod +x mvnw
+deplou:
+  provider: heroku
+  api_key:
+    secure: nbHALY3yvhBOtp74jwX1iPBHlOpDQdGhwwVBVo8MOMnNjLZCfBxUWqTOcSmII62+W2E2hDo+a0q3OWbYwBTVYplAuCMCkKBNtoF7yaAFBoMRWQk5LQq/Hjo9RW0mEt3PiEO1FxCK720yt72M7YFHRmDAcLBgB90btIRwKmRPm8vv+C4CBnP3qRxssNw+IxQjqhWGGftvyytqnhOl94/t/2z0+dUstE3tH37T/9O6RD8zi7eEbNPWCYZYYgOTZAufse3OPpFC1aSmzQWwWSPcBApgLQPGlklEm55PDQcdLvgmjR2Wk+gK3U9S/s2l8hucB9hJEXctIgh/qqXWOIrhilPqOK5qD8HblwfED1f+MIe0MQBhGfrc2KRz7PyZmdyODo5US5cBnywxxVN7Ws74Ix5Y2DNUp4p+jnKL4UItCuL0KE5HeWYo7DgYiS5dArUppkZyaLAnqemvRWl+XvbihCoEzGbdRMz5dDh9oMtPsGdyhps6JEYE3UshYRO9SxU3pmOiexhn64IlxisymEXGHvBQnx4FAt7VkbEnX7/OCyvkjnC6J3jy8ixt92a87iFdsUgZicgxC9IZFwB9oiXg+6+ewXNwvXQKZ7VnZYvsUYzo4AEeetlcN/SXzN4ii/ojDiy7LWVA+4or3BtrJCB9IPRCK99UbbTDajwnUEskwJU=
