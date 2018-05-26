@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://ec2-54-247-89-189.eu-west-1.compute.amazonaws.com:5432/dde690ho440f18</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping class="com.numismatics.model.entity.Certyfikaty"/>
+      <mapping class="com.numismatics.model.entity.FirmyCertyfikujace"/>
+      <mapping class="com.numismatics.model.entity.Kraje"/>
+      <mapping class="com.numismatics.model.entity.Kruszce"/>
+      <mapping class="com.numismatics.model.entity.Mennice"/>
+      <mapping class="com.numismatics.model.entity.Monety"/>
+      <mapping class="com.numismatics.model.entity.Panujacy"/>
+      <mapping class="com.numismatics.model.entity.Stany"/>
+      <mapping class="com.numismatics.model.entity.TypyKrajow"/>
+      <mapping class="com.numismatics.model.entity.TypyStanow"/>
+    <mapping class="com.numismatics.model.entity.Zdjecia"/>
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
