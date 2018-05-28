@@ -4,14 +4,13 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Created by Eoller on 26-May-18.
+ * Created by Eoller on 28-May-18.
  */
 @Entity
 public class Mennice {
     private Integer id;
     private String nazwa;
     private String opis;
-    private Collection<Monety> monetiesById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -43,34 +42,4 @@ public class Mennice {
         this.opis = opis;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Mennice mennice = (Mennice) o;
-
-        if (id != null ? !id.equals(mennice.id) : mennice.id != null) return false;
-        if (nazwa != null ? !nazwa.equals(mennice.nazwa) : mennice.nazwa != null) return false;
-        if (opis != null ? !opis.equals(mennice.opis) : mennice.opis != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (nazwa != null ? nazwa.hashCode() : 0);
-        result = 31 * result + (opis != null ? opis.hashCode() : 0);
-        return result;
-    }
-
-    @OneToMany(mappedBy = "menniceByMennicaId")
-    public Collection<Monety> getMonetiesById() {
-        return monetiesById;
-    }
-
-    public void setMonetiesById(Collection<Monety> monetiesById) {
-        this.monetiesById = monetiesById;
-    }
 }

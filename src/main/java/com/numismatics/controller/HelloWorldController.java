@@ -1,8 +1,10 @@
 package com.numismatics.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import com.numismatics.model.entity.Monety;
+import com.numismatics.repository.MonetRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -11,9 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 
+    @Autowired
+    private MonetRepository monetRepository;
+
+    @ResponseBody
     @RequestMapping("/")
-    public String helloWorld(){
-        return "HelloWorld";
+    public Monety helloWorld(){
+        return monetRepository.getOne(1);
     }
 
 
