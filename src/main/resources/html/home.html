@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<meta charset="utf-8">
+		<title>NumismaticsWeb</title>
+		
+		<link th:href="@{../css/minimal-table.css" href="../css/minimal-table.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<header>
+			<h1>NumismaticsWeb</h1>
+		</header>
+		<section>
+			<table>
+				<caption>Monety</caption>
+				<thead>
+					<tr>
+						<th scope="col">Kod</th>
+						<th scope="col">Nazwa</th>
+						<th scope="col">Cena (PLN)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="coin : ${coins}">
+						<td th:text="${coin.code}">1</td>
+						<td th:text="${coin.name}">Złota Moneta</td>
+						<td th:text="${coin.price}">33.3</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.3930462946178!2d20.989350115561603!3d52.2362441649719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc867a62e609%3A0x1b1995d39d6cd2af!2sWalic%C3%B3w+19%2C+Warszawa!5e0!3m2!1spl!2spl!4v1528548532594" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</section>
+		<footer>
+			
+		</footer>
+	</body>
+</html>
