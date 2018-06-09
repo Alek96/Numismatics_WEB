@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<meta charset="utf-8">
+		<title>NumismaticsWeb</title>
+		<!-- th:href="@{/css/minimal-table.css" -->
+		<link href="../css/minimal-table.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<header>
+			<h1>NumismaticsWeb</h1>
+		</header>
+		<section>
+			<table>
+				<caption>Monety</caption>
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Nazwa</th>
+						<th scope="col">Cena (PLN)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="coin : ${allCoins}">
+						<td th:text="${coin.id}">-1</td>
+						<td th:text="${coin.nazwa}">Złota Moneta</td>
+						<td th:text="${coin.cena}">33.3</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<footer>
+			
+		</footer>
+	</body>
+</html>
