@@ -17,7 +17,7 @@ public class HelloWorldController {
     private MonetRepository monetRepository;
 
     @ResponseBody
-    @RequestMapping("/")
+//    @RequestMapping("/")
     public Monety helloWorld(){
         return monetRepository.getOne(1);
     }
