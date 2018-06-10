@@ -8,6 +8,6 @@ public class ErrorController {
 
     @RequestMapping("/403")
     String login() {
-        return "/error/403";
+        return "error/403";
     }
 }
