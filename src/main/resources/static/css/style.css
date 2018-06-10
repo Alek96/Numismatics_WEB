@@ -50,6 +50,10 @@ footer {
     width: 100%;
 }
 
+div #padder{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .center {
     display: block;
     margin-left: auto;

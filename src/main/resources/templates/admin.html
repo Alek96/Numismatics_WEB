@@ -1,122 +1,120 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="pl-PL">
-	<head>
-		<meta charset="utf-8">
-		<title>NumismaticsWeb - admin</title>
-	</head>
-	<body>
-		<div>  
+<html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title> Numismatic </title>
+</head>
+
+<body>
+<div layout:fragment="content" th:remove="tag">
       <h1>Dodaj nową monetę</h1>
 
       <form action="#" th:action="@{/admin}" th:object="${coin}" method="post">
-    
+
         <fieldset>
-          
+
           <legend>Dane monety</legend>
 
           <!-- <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
           </ul> -->
 
-          
+          <section class="left">
+            <div id="textLeft">
+            Id:<br>
+            Uid:<br>
+            Nazwa:<br>
+            Waga:<br>
+            Próba:<br>
+            Cena:<br>
+            Rok:<br>
+            Opis:<br>
+            Literatura:<br>
+            Kruszce:<br>
+            Certyfikay:<br>
+            Kraj:<br>
+            Panujący<br>
+            Mennica<br>
+            <div class="submit">
+              <button type="submit" name="save">Dodaj monetę</button>
+            </div>
+            </div>
+          </section>
+          <section class="left">
           <div>
-            <label for="id">
-              <span>Id</span>
-            </label>
             <input type="text" id="id" name="id" th:value="${coin.id}"/>
           </div>
 					<div>
-            <label for="uid">
-              <span>Uid</span>
-            </label>
             <input type="text" th:field="*{uid}"/>
           </div>
 					<div>
-            <label for="nazwa">
-              <span>Nazwa</span>
-            </label>
             <input type="text" th:field="*{nazwa}"/>
           </div>
 					<div>
-            <label for="waga">
-              <span>Waga</span>
-            </label>
             <input type="text" th:field="*{waga}"/>
           </div>
 					<div>
-            <label for="proba">
-              <span>Próba</span>
-            </label>
             <input type="text" th:field="*{proba}"/>
           </div>
 					<div>
-            <label for="cena">
-              <span>Cena</span>
-            </label>
             <input type="text" th:field="*{cena}"/>
           </div>
 					<div>
-            <label for="rok">
-              <span>Rok</span>
-            </label>
             <input type="text" th:field="*{rok}"/>
           </div>
 					<div>
-            <label for="opis">
-              <span>Opis</span>
-            </label>
             <input type="text" th:field="*{opis}"/>
           </div>
 					<div>
-            <label for="literatura">
-              <span>Literatura</span>
-            </label>
             <input type="text" th:field="*{literatura}"/>
           </div>
-					
+
 					<!-- radio button -->
 					<!-- option: add new -->
 					<div>
-            <label for="kruszceByKruszecId">Kruszce</label>
             <select th:field="*{kruszceByKruszecId}">
               <option th:each="ore : ${allOres}" th:value="${ore.id}" th:text="${ore.typ}">Kruszec</option>
             </select>
 					</div>
 					<div>
-            <label for="certyfikatyByCeryfikatId">Certyfikaty</label>
             <select th:field="*{certyfikatyByCeryfikatId}">
               <option th:each="cert : ${allCerts}" th:value="${cert.id}" th:text="${cert.nazwa}">Certyfikat</option>
             </select>
 					</div>
 					<div>
-            <label for="krajeByKrajId">Kraje</label>
             <select th:field="*{krajeByKrajId}">
               <option th:each="country : ${allCountries}" th:value="${country.id}" th:text="${country.nazwa}">Kraj</option>
             </select>
 					</div>
 					<div>
-            <label for="panujacyByPanujacyId">Panujący</label>
             <select th:field="*{panujacyByPanujacyId}">
               <option th:each="ruler : ${allRulers}" th:value="${ruler.id}" th:text="${ruler.nazwa}">Panujący</option>
             </select>
 					</div>
 					<div>
-            <label for="menniceByMennicaId">Mennice</label>
             <select th:field="*{menniceByMennicaId}">
               <option th:each="mint : ${allMint}" th:value="${mint.id}" th:text="${mint.nazwa}">Mennice</option>
             </select>
 					</div>
-					
-				
-					
-    
-          <div class="submit">
-            <button type="submit" name="save">Dodaj monetę</button>    
-          </div>
-        
+          </section>
+
+
+
+
+
+
         </fieldset>
-          
-      </form>   
-		</div>
+
+      </form>
+      <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
 	</body>
 </html>
