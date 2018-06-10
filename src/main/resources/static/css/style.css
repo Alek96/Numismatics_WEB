@@ -5,7 +5,7 @@ header {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
-    padding: 0;
+    padding: 0px;
 }
 
 body {
@@ -13,11 +13,10 @@ body {
     display: flex;
     flex-direction: column;
     background-color: beige;
-    margin: 10px 0 0 0;
+    margin: 0 0 0 0;
 }
 
 #body {
-    padding: 10px;
     padding-bottom: 200px; /* Height of the footer */
 }
 
@@ -27,11 +26,19 @@ body {
     position: relative;
 }
 
-div#footer {
+div #footer {
     position: relative;
     bottom: 0;
     width: 100%;
     background: black;
+}
+
+div #textRight {
+    text-align: right;
+}
+
+div #textLeft {
+    text-align: left;
 }
 
 footer {
@@ -52,28 +59,27 @@ footer {
 }
 
 .right {
-    text-align: right;
-}
-div #right {
-    float: left;
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: justify;
+    float: right;
+    width: 42%;
 }
 
-div #left {
-    float: left;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: justify;
+.right60 {
+    float: right;
+    width: 60%;
 }
 
+.left {
+    float: left;
+    width: 42%;
+}
+.up {
+    float: top;
+    height: auto;
+}
 div.margin {
     margin-left: 8%;
     margin-right: 8%;
-
+    padding-top: 10px;
 }
 
 html {

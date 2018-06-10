@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,45 +30,74 @@
         <h3 class="center">
             Jak nas znalezc?
         </h3>
-        <section class="border-left">
-            <h6>
-                Jak do nas dotrzec:
-            </h6>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152.7119813264308!2d20.99173258792395!3d52.236268598693684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc867ac61bd1%3A0xf0032244cfea3b90!2sGaleria+Numizmatyczna+SiSRemonet!5e0!3m2!1spl!2spl!4v1528549363007"
-                    width="500" height="450" frameborder="0" style="border:0" allowfullscreen>
-                <p>
-                    <!-- Fallback link for browsers that don't support iframes -->
-                    <a href="https://goo.gl/maps/vLR3EbK5ZUC2">Zobacz lokalizację w Google Maps.</a>
-                </p>
-            </iframe>
-        </section>
-        <section style="padding-bottom: 200px;">
-            <aside class="right">
-                <p>
-                    SIS REMONET<br>
-                    GALERIA NUMIZMATYCZNA
-                </p>
-                <p>
-                    ul. Walicow 19 (Wejscie od Krochmalnej)
-                </p>
-                <p>
-                    tel. +48 22 299 12 13
-                </p>
-                <p>
-                    mail: galeria@sisremonet.pl
-                </p>
-                <p>
-                    otwarte<br>
-                    poniedzialek - piatek<br>
-                    od godz. 10.00 do 17.00
-                </p>
-            </aside>
-        </section>
-    </div>
+        <section>
+            <section class="left">
+                <h6>
+                    Jak do nas dotrzec:
+                </h6>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152.7119813264308!2d20.99173258792395!3d52.236268598693684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc867ac61bd1%3A0xf0032244cfea3b90!2sGaleria+Numizmatyczna+SiSRemonet!5e0!3m2!1spl!2spl!4v1528549363007"
+                        width="700" height="450" frameborder="0" style="border:0" allowfullscreen>
+                    <p>
+                        <!-- Fallback link for browsers that don't support iframes -->
+                        <a href="https://goo.gl/maps/vLR3EbK5ZUC2">Zobacz lokalizację w Google Maps.</a>
+                    </p>
+                </iframe>
+            </section>
+            <section style="padding-bottom: 200px;" class="left">
+                <div id="textRight">
+                    <h6>
+                        Nasz adres:
+                    </h6>
 
+                    <p>
+                        SIS REMONET<br>
+                        GALERIA NUMIZMATYCZNA
+                    </p>
+                    <p>
+                        ul. Walicow 19 (Wejscie od Krochmalnej)
+                    </p>
+                    <p>
+                        tel. +48 22 299 12 13
+                    </p>
+                    <p>
+                        mail: galeria@sisremonet.pl
+                    </p>
+                    <p>
+                        otwarte<br>
+                        poniedzialek - piatek<br>
+                        od godz. 10.00 do 17.00
+                    </p>
+                </div>
+                <div id="textLeft">
+                    <section>
+                        <section class="right">
+                            <p>SiS Remonet Sp. z o. o.</p>
+                            <p>ul. Walicow 19</p>
+                            <p>00-865</p>
+                        </section>
+                        <section class="right">
+                            <p>NIP: 5272793508</p>
+                            <p>REGON: 366373973</p>
+                            <p>KRS: 0000658930</p>
+                        </section>
+                    </section>
+                </div>
+
+
+                <section class="right60">
+                    <p>Numery kont bankowych w mBanku:</p>
+                    <p>PLN  39 1140 1010 0000 5582 5900 1001</p>
+                    <p>EUR  12 1140 1010 0000 5582 5900 1002</p>
+                    <p>USD  82 1140 1010 0000 5582 5900 1003</p>
+                </section>
+            </section>
+
+        </section>
+
+    </div>
     <!-- Footer -->
     <div th:include="footer"></div>
-    <!-- Footer --->
+    <!-- Footer -->
 </div>
 </body>
 </html>
