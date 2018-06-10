@@ -4,7 +4,8 @@
       xmlns:th="http://www.thymeleaf.org"
       layout:decorate="~{fragments/layout}">
 <head>
-    <title> Numismatic </title>
+		<meta charset="utf-8">
+    <title> Numismatic - coins </title>
 </head>
 
 <body>
@@ -12,37 +13,28 @@
 
     <section>
         <div class="margin">
-            <table>
-                <caption>Monety</caption>
-                <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Uid</th>
-                    <th scope="col">Nazwa</th>
-                    <th scope="col">Waga</th>
-                    <th scope="col">Próba</th>
-                    <th scope="col">Cena (PLN)</th>
-                    <th scope="col">Rok</th>
-                    <th scope="col">Opis</th>
-                    <th scope="col">Literatura</th>
-                    <!-- <th scope="col">Kruszce</th> 		-->
-                    <!-- <th scope="col">Certyfikaty</th> -->
-                    <!-- <th scope="col">Kraje</th>				-->
-                    <!-- <th scope="col">Panujący</th>		-->
-                    <!-- <th scope="col">Mennice</th>			-->
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="coin : ${allCoins}">
-                    <td th:text="${coin.id}">id</td>
-                    <td th:text="${coin.uid}">uid</td>
-                    <td th:text="${coin.nazwa}">nazwa</td>
-                    <td th:text="${coin.waga}">waga</td>
-                    <td th:text="${coin.proba}">próba</td>
-                    <td th:text="${coin.cena}">cena</td>
-                    <td th:text="${coin.rok}">rok</td>
-                    <td th:text="${coin.opis}">opis</td>
-                    <td th:text="${coin.literatura}">literatura</td>
+        <table>
+            <caption>Monety</caption>
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Uid</th>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Waga</th>
+                <th scope="col">Próba</th>
+                <th scope="col">Cena (PLN)</th>
+                <th scope="col">Rok</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="coin : ${allCoins}">
+								<td th:text="${coin.id}">id</td>
+                <td th:text="${coin.uid}">uid</td>
+                <td><a th:href="@{/moneta/{id}(id=${coin.id})}" th:text="${coin.nazwa}" href="#">nazwa</a></td>
+                <td th:text="${coin.waga}">waga</td>
+                <td th:text="${coin.proba}">próba</td>
+                <td th:text="${coin.cena}">cena</td>
+                <td th:text="${coin.rok}">rok</td>
 
                     <!-- <td th:condition="!empty : coin.kruszceByKruszecId" th:text=...>
                         none (default)

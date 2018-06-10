@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+		<meta charset="utf-8">
+    <title> Numismatic - coin details </title>
+		<style>
+			a.back-button {
+				-webkit-appearance: button;
+    		-moz-appearance: button;
+    		appearance: button;
+
+    		text-decoration: none;
+    		color: initial;
+			}
+			table#coin-details {
+				margin-left:	auto;
+				margin-right: auto;
+			}
+		</style>
+</head>
+
+<body>
+<div layout:fragment="content" th:remove="tag">
+
+		<section>
+			<a th:href="@{/monety}" href="/monety" class="back-button">Powrót do monet</a>
+		</section>
+    <section class="center">
+        <table id="coin-details">
+            <caption>Szczegółowe dane monety</caption>
+            <tbody>
+							<tr>
+								<th scope="row">Id</th>
+								<td th:text="${coin.id}">id</td>
+							</tr>
+							<tr>
+								<th scope="row">Uid</th>
+								<td th:text="${coin.uid}">uid</td>
+							</tr>
+							<tr>
+								<th scope="row">Nazwa</th>
+								<td th:text="${coin.nazwa}">nazwa</td>
+							</tr>
+							<tr>
+								<th scope="row">Waga</th>
+								<td th:text="${coin.waga}">waga</td>
+							</tr>
+							<tr>
+								<th scope="row">Próba</th>
+								<td th:text="${coin.proba}">próba</td>
+							</tr>
+							<tr>
+								<th scope="row">Cena (PLN)</th>
+								<td th:text="${coin.cena}">cena</td>
+							</tr>
+							<tr>
+								<th scope="row">Rok</th>
+								<td th:text="${coin.rok}">rok</td>
+							</tr>
+							<tr>
+								<th scope="row">Opis</th>
+								<td th:text="${coin.opis}">opis</td>
+							</tr>
+							<tr>
+								<th scope="row">Literatura</th>
+								<td th:text="${coin.literatura}">literatura</td>
+							</tr>
+							<tr>
+								<th scope="col">Kruszec</th>
+								<td th:text="${coin.kruszceByKruszecId.typ}">kruszec</td>
+							</tr>
+							<tr>
+								<th scope="col">Certyfikat</th>
+								<td th:text="${coin.certyfikatyByCeryfikatId.nazwa}">certyfikat</td>
+							</tr>
+							<tr>
+								<th scope="col">Kraj</th>			
+								<td th:text="${coin.krajeByKrajId.nazwa}">kraj</td>
+							</tr>
+							<tr>
+								<th scope="col">Panujący</th>
+								<td th:text="${coin.panujacyByPanujacyId.nazwa}">panujący</td>
+							</tr>
+							<tr>
+								<th scope="col">Mennica</th>	
+								<td th:text="${coin.menniceByMennicaId.nazwa}">mennica</td>
+							</tr>
+            </tbody>
+        </table>
+    </section>
+
+	</div>
+	</body>
+</html>
