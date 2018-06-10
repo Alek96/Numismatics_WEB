@@ -1,7 +1,5 @@
 package com.numismatics.model.entity;
 
-import org.springframework.context.annotation.Bean;
-
 import javax.persistence.*;
 import java.util.Collection;
 

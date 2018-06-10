@@ -28,4 +28,9 @@ public class CoinsController {
     public String coins() {
         return "coins";
     }
+
+    @RequestMapping("/moneta/{id}")
+    public String coinDetails() {
+        return "coinDetails";
+    }
 }
