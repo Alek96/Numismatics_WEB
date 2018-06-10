@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
->
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,9 +12,11 @@
     <link href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
     <script src="/webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
-    <title>NumismaticsWeb</title>
 
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/style.css"
+          th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+
+    <title>Numismatic</title>
 </head>
 
 <body>
@@ -65,10 +67,7 @@
     </div>
 
     <!-- Footer -->
-    <div id="footer">
-        <img src="../images/Stopka.png" class="center">
-    </div>
-    <!--<div th:include="footer"></div>-->
+    <div th:include="footer"></div>
     <!-- Footer --->
 </div>
 </body>
