@@ -1,19 +1,23 @@
 header {
-    background-color: black;
-    border-bottom: goldenrod 1px solid;
-    width: 100%;
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0px;
-}
+     background-color: black;
+     border-bottom: goldenrod 1px solid;
+     width: 100%;
+     margin-top: 0;
+     margin-left: 0;
+     margin-right: 0;
+     padding: 0px;
+ }
 
 body {
-
-    display: flex;
     flex-direction: column;
     background-color: beige;
     margin: 0 0 0 0;
+}
+
+div #alignRight {
+    align-content: right;
+    align-items: right;
+    text-align: right;
 }
 
 #body {
@@ -64,7 +68,7 @@ div #padder{
 
 .right {
     float: right;
-    width: 42%;
+    width: 40%;
 }
 
 .right60 {
@@ -74,14 +78,11 @@ div #padder{
 
 .left {
     float: left;
-    width: 42%;
+    width: 40%;
 }
-.up {
-    float: top;
-    height: auto;
-}
+
 div.margin {
-    margin-left: 8%;
+    margin-left: 16%;
     margin-right: 8%;
     padding-top: 10px;
 }
