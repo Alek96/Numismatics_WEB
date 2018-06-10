@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl-PL">
+	<head>
+		<meta charset="utf-8">
+		<title>NumismaticsWeb - admin</title>
+	</head>
+	<body>
+		<div>  
+      <h1>Dodaj nową monetę</h1>
+
+      <form action="#" th:action="@{/admin}" th:object="${coin}" method="post">
+    
+        <fieldset>
+          
+          <legend>Dane monety</legend>
+
+          <!-- <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+          </ul> -->
+
+          
+          <div>
+            <label for="id">
+              <span>Id</span>
+            </label>
+            <input type="text" id="id" name="id" th:value="${coin.id}"/>
+          </div>
+					<div>
+            <label for="uid">
+              <span>Uid</span>
+            </label>
+            <input type="text" th:field="*{uid}"/>
+          </div>
+					<div>
+            <label for="nazwa">
+              <span>Nazwa</span>
+            </label>
+            <input type="text" th:field="*{nazwa}"/>
+          </div>
+					<div>
+            <label for="waga">
+              <span>Waga</span>
+            </label>
+            <input type="text" th:field="*{waga}"/>
+          </div>
+					<div>
+            <label for="proba">
+              <span>Próba</span>
+            </label>
+            <input type="text" th:field="*{proba}"/>
+          </div>
+					<div>
+            <label for="cena">
+              <span>Cena</span>
+            </label>
+            <input type="text" th:field="*{cena}"/>
+          </div>
+					<div>
+            <label for="rok">
+              <span>Rok</span>
+            </label>
+            <input type="text" th:field="*{rok}"/>
+          </div>
+					<div>
+            <label for="opis">
+              <span>Opis</span>
+            </label>
+            <input type="text" th:field="*{opis}"/>
+          </div>
+					<div>
+            <label for="literatura">
+              <span>Literatura</span>
+            </label>
+            <input type="text" th:field="*{literatura}"/>
+          </div>
+				
+    
+          <div class="submit">
+            <button type="submit" name="save">Dodaj monetę</button>    
+          </div>
+        
+        </fieldset>
+          
+      </form>   
+		</div>
+	</body>
+</html>

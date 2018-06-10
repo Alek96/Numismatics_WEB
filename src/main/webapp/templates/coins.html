@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
+<html lang="pl-PL" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="utf-8">
 		<title>NumismaticsWeb</title>
@@ -15,15 +15,39 @@
 				<thead>
 					<tr>
 						<th scope="col">Id</th>
+						<th scope="col">Uid</th>
 						<th scope="col">Nazwa</th>
+						<th scope="col">Waga</th>
+						<th scope="col">Próba</th>
 						<th scope="col">Cena (PLN)</th>
+						<th scope="col">Rok</th>
+						<th scope="col">Opis</th>
+						<th scope="col">Literatura</th>
+						<!-- <th scope="col">Kruszce</th> 		-->
+						<!-- <th scope="col">Certyfikaty</th> -->
+						<!-- <th scope="col">Kraje</th>				-->
+						<!-- <th scope="col">Panujący</th>		-->
+						<!-- <th scope="col">Mennice</th>			-->
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="coin : ${allCoins}">
-						<td th:text="${coin.id}">-1</td>
-						<td th:text="${coin.nazwa}">Złota Moneta</td>
-						<td th:text="${coin.cena}">33.3</td>
+						<td th:text="${coin.id}">id</td>
+						<td th:text="${coin.uid}">uid</td>
+						<td th:text="${coin.nazwa}">nazwa</td>
+						<td th:text="${coin.waga}">waga</td>
+						<td th:text="${coin.proba}">próba</td>
+						<td th:text="${coin.cena}">cena</td>
+						<td th:text="${coin.rok}">rok</td>
+						<td th:text="${coin.opis}">opis</td>
+						<td th:text="${coin.literatura}">literatura</td>
+						
+						<!-- <td th:condition="!empty : coin.kruszceByKruszecId" th:text=...>
+							none (default)
+							<ul th:condition>
+								<li th:each="ore : ${coin.kruszceByKruszecId}" th:text="${ore.typ}"></li>
+							</ul>
+						</td> -->
 					</tr>
 				</tbody>
 			</table>
