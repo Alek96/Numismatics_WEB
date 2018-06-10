@@ -10,243 +10,253 @@
 <body>
 <div layout:fragment="content" th:remove="tag">
     <div class="margin">
-    <h1>Dodaj nową monetę</h1>
+        <h1>Dodaj nową monetę</h1>
 
-    <form action="#" th:action="@{/admin}" th:object="${coin}" method="post">
+        <form action="#" th:action="@{/admin}" th:object="${coin}" method="post">
 
-        <fieldset>
+            <fieldset>
 
-            <legend>Dane monety</legend>
+                <legend>Dane monety</legend>
 
-            <!-- <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
-              <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
-            </ul> -->
+                <!-- <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+                  <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+                </ul> -->
 
-            <section class="center">
-            <section class="left">
-                <div id="textLeft">
-                    Id:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" id="id" name="id" th:value="${coin.id}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Uid:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" th:field="*{uid}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Nazwa:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" th:field="*{nazwa}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Waga:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" th:field="*{waga}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Próba:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" th:field="*{proba}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Cena:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" th:field="*{cena}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Rok:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" th:field="*{rok}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Opis:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" th:field="*{opis}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Literatura:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <input type="text" th:field="*{literatura}"/>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Kruszec:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <select th:field="*{kruszceByKruszecId}">
-                        <option th:each="ore : ${allOres}" th:value="${ore.id}" th:text="${ore.typ}">Kruszec</option>
-                    </select>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Certyfikat:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <select th:field="*{certyfikatyByCeryfikatId}">
-                        <option th:each="cert : ${allCerts}" th:value="${cert.id}" th:text="${cert.nazwa}">Certyfikat</option>
-                    </select>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Kraj:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <select th:field="*{krajeByKrajId}">
-                        <option th:each="country : ${allCountries}" th:value="${country.id}" th:text="${country.nazwa}">Kraj</option>
-                    </select>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Panujący:<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <select th:field="*{panujacyByPanujacyId}">
-                        <option th:each="ruler : ${allRulers}" th:value="${ruler.id}" th:text="${ruler.nazwa}">Panujący</option>
-                    </select>
-                </div>
-            </section>
-            <section class="left">
-                <div id="textLeft">
-                    Mennica<br>
-                </div>
-            </section>
-            <section class="left">
-                <div>
-                    <select th:field="*{menniceByMennicaId}">
-                        <option th:each="mint : ${allMint}" th:value="${mint.id}" th:text="${mint.nazwa}">Mennica</option>
-                    </select>
-                </div>
-            </section>
-            <section class="left">
+                <section class="center">
+                    <section class="left">
+                        <div id="textLeft">
+                            Id:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" id="id" name="id" th:value="${coin.id}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Uid:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" th:field="*{uid}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Nazwa:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" th:field="*{nazwa}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Waga:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" th:field="*{waga}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Próba:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" th:field="*{proba}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Cena:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" th:field="*{cena}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Rok:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" th:field="*{rok}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Opis:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" th:field="*{opis}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Literatura:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <input type="text" th:field="*{literatura}"/>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Kruszec:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <select th:field="*{kruszceByKruszecId}">
+                                <option th:each="ore : ${allOres}" th:value="${ore.id}" th:text="${ore.typ}">Kruszec
+                                </option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Certyfikat:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <select th:field="*{certyfikatyByCeryfikatId}">
+                                <option th:each="cert : ${allCerts}" th:value="${cert.id}" th:text="${cert.nazwa}">
+                                    Certyfikat
+                                </option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Kraj:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <select th:field="*{krajeByKrajId}">
+                                <option th:each="country : ${allCountries}" th:value="${country.id}"
+                                        th:text="${country.nazwa}">Kraj
+                                </option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Panujący:<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <select th:field="*{panujacyByPanujacyId}">
+                                <option th:each="ruler : ${allRulers}" th:value="${ruler.id}" th:text="${ruler.nazwa}">
+                                    Panujący
+                                </option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div id="textLeft">
+                            Mennica<br>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div>
+                            <select th:field="*{menniceByMennicaId}">
+                                <option th:each="mint : ${allMint}" th:value="${mint.id}" th:text="${mint.nazwa}">
+                                    Mennica
+                                </option>
+                            </select>
+                        </div>
+                    </section>
+                    <section class="left">
+                        <div class="submit">
+                            <button type="submit" name="save">Dodaj monetę</button>
+                        </div>
+                    </section>
+                </section>
+
+
+                <!--
+                Cena:<br>
+                Rok:<br>
+                Opis:<br>
+                Literatura:<br>
+                Kruszce:<br>
+                Certyfikay:<br>
+                Kraj:<br>
+                Panujący<br>
+                Mennica<br>
                 <div class="submit">
-                    <button type="submit" name="save">Dodaj monetę</button>
+                  <button type="submit" name="save">Dodaj monetę</button>
                 </div>
-            </section>
-            </section>
-            </div>
+                </div>
+              </section>
+              <section class="left">
+                        <div>
+                <input type="text" th:field="*{rok}"/>
+              </div>
+                        <div>
+                <input type="text" th:field="*{opis}"/>
+              </div>
+                        <div>
+                <input type="text" th:field="*{literatura}"/>
+              </div>
 
-            <!--
-            Cena:<br>
-            Rok:<br>
-            Opis:<br>
-            Literatura:<br>
-            Kruszce:<br>
-            Certyfikay:<br>
-            Kraj:<br>
-            Panujący<br>
-            Mennica<br>
-            <div class="submit">
-              <button type="submit" name="save">Dodaj monetę</button>
-            </div>
-            </div>
-          </section>
-          <section class="left">
-					<div>
-            <input type="text" th:field="*{rok}"/>
-          </div>
-					<div>
-            <input type="text" th:field="*{opis}"/>
-          </div>
-					<div>
-            <input type="text" th:field="*{literatura}"/>
-          </div>
-
-					&lt;!&ndash; radio button &ndash;&gt;
-					&lt;!&ndash; option: add new &ndash;&gt;
-					<div>
-            <select th:field="*{kruszceByKruszecId}">
-              <option th:each="ore : ${allOres}" th:value="${ore.id}" th:text="${ore.typ}">Kruszec</option>
-            </select>
-					</div>
-					<div>
-            <select th:field="*{certyfikatyByCeryfikatId}">
-              <option th:each="cert : ${allCerts}" th:value="${cert.id}" th:text="${cert.nazwa}">Certyfikat</option>
-            </select>
-					</div>
-					<div>
-            <select th:field="*{krajeByKrajId}">
-              <option th:each="country : ${allCountries}" th:value="${country.id}" th:text="${country.nazwa}">Kraj</option>
-            </select>
-					</div>
-					<div>
-            <select th:field="*{panujacyByPanujacyId}">
-              <option th:each="ruler : ${allRulers}" th:value="${ruler.id}" th:text="${ruler.nazwa}">Panujący</option>
-            </select>
-					</div>
-					<div>
-            <select th:field="*{menniceByMennicaId}">
-              <option th:each="mint : ${allMint}" th:value="${mint.id}" th:text="${mint.nazwa}">Mennice</option>
-            </select>
-					</div>
-          </section>-->
+                        &lt;!&ndash; radio button &ndash;&gt;
+                        &lt;!&ndash; option: add new &ndash;&gt;
+                        <div>
+                <select th:field="*{kruszceByKruszecId}">
+                  <option th:each="ore : ${allOres}" th:value="${ore.id}" th:text="${ore.typ}">Kruszec</option>
+                </select>
+                        </div>
+                        <div>
+                <select th:field="*{certyfikatyByCeryfikatId}">
+                  <option th:each="cert : ${allCerts}" th:value="${cert.id}" th:text="${cert.nazwa}">Certyfikat</option>
+                </select>
+                        </div>
+                        <div>
+                <select th:field="*{krajeByKrajId}">
+                  <option th:each="country : ${allCountries}" th:value="${country.id}" th:text="${country.nazwa}">Kraj</option>
+                </select>
+                        </div>
+                        <div>
+                <select th:field="*{panujacyByPanujacyId}">
+                  <option th:each="ruler : ${allRulers}" th:value="${ruler.id}" th:text="${ruler.nazwa}">Panujący</option>
+                </select>
+                        </div>
+                        <div>
+                <select th:field="*{menniceByMennicaId}">
+                  <option th:each="mint : ${allMint}" th:value="${mint.id}" th:text="${mint.nazwa}">Mennice</option>
+                </select>
+                        </div>
+              </section>-->
 
 
-        </fieldset>
+            </fieldset>
 
-    </form>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
 </div>
 </body>
 </html>
