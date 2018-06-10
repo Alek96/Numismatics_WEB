@@ -1,27 +1,43 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
-	<head>
-		<meta charset="utf-8">
-		<title>NumismaticsWeb</title>
-		
-		<link href="../css/style.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<header>
-			<img src="../images/Header.png" alt="Header" class="center" th:src="@{/images/Header.png}">
-		</header>
-		<div class="margin">
-		<section>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152.7119813264308!2d20.99173258792395!3d52.236268598693684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc867ac61bd1%3A0xf0032244cfea3b90!2sGaleria+Numizmatyczna+SiSRemonet!5e0!3m2!1spl!2spl!4v1528549363007" width="800" height="600" frameborder="0" style="border:0" allowfullscreen>
-				<p>
-					<!-- Fallback link for browsers that don't support iframes -->
-					<a href="https://goo.gl/maps/vLR3EbK5ZUC2">Zobacz lokalizację w Google Maps.</a>
-				</p>
-			</iframe>
-		</section>
-		</div>
-	</body>
-	<footer>
-		<img src="../images/Stopka.png" alt="Footer" class="center" th:src="@{/images/Stopka.png}">
-	</footer>
+<html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular-resource.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular-route.js"></script>
+    <link href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
+    <title>NumismaticsWeb</title>
+
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="content">
+    <!-- Navbar -->
+    <div th:include="navbar"></div>
+    <!-- Navbar -->
+
+    <div class="margin">
+        <section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152.7119813264308!2d20.99173258792395!3d52.236268598693684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc867ac61bd1%3A0xf0032244cfea3b90!2sGaleria+Numizmatyczna+SiSRemonet!5e0!3m2!1spl!2spl!4v1528549363007"
+                    width="800" height="600" frameborder="0" style="border:0" allowfullscreen>
+                <p>
+                    <!-- Fallback link for browsers that don't support iframes -->
+                    <a href="https://goo.gl/maps/vLR3EbK5ZUC2">Zobacz lokalizację w Google Maps.</a>
+                </p>
+            </iframe>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div th:include="footer"></div>
+    <!-- Footer --->
+</div>
+</body>
 </html>

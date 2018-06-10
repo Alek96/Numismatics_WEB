@@ -7,26 +7,26 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <link href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
-    <link href="../static/css/style.css"
-          th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
     <script src="/webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="/webjars/angularjs/1.6.9/angular.js"></script>
     <script src="/webjars/angularjs/1.6.9/angular-resource.js"></script>
     <script src="/webjars/angularjs/1.6.9/angular-route.js"></script>
+
+    <link href="../static/css/style.css"
+          th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+
     <title> Numismatic </title>
 </head>
 
-<header>
-    <img src="../images/Header.png" alt="Header" class="center" th:src="@{/images/Header.png}">
-</header>
-
 <body>
-<div id="container">
+<div id="content">
+    <!-- Navbar -->
+    <div th:include="navbar"></div>
+    <!-- Navbar -->
 
     <div id="body">
         <div class="margin">
-            <div th:include="navbar"></div>
             To<br>
             jest<br>
             tekst,<br>
@@ -50,13 +50,24 @@
             jej<br>
             koncu<br>
             KURWA<br>
+            KURWA!<br>
+            KURWA!!<br>
+            KURWA!!!<br>
+            <br>
+            Chwila<br>
+            chyba<br>
+            mam<br>
+            pomysl<br>
+            <br>
+            O kurwa!<br>
+            DZIALA<br>
         </div>
     </div>
 
 
-    <div id="footer">
-        <img src="../images/Stopka.png" alt="Footer" class="center" th:src="@{/images/Stopka.png}">
-    </div>
+    <!-- Footer -->
+    <div th:include="footer"></div>
+    <!-- Footer --->
 </div>
 </body>
 </html>

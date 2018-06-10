@@ -1,64 +1,79 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-          xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-        <title>Numismatic</title>
-    </head>
-    <body>
-    <div class="content">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="/login">Numismatic Login Page</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav>
-        <form th:action="@{/login}" method="post">
-            <div class="container" style="padding-top: 30px">
-                <div class="row text-white">
-                    <div class="col-md-2">
-                        <label> User Name : </label>
-                    </div>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="Username" name="username" width="100%"/>
-                    </div>
-                </div>
-                <div class="row text-white">
-                    <div class="col-md-2">
-                        <label> Password : </label>
-                    </div>
-                    <div class="col-md-10">
-                        <input type="password" placeholder="Password" name="password" width="100%"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div th:if="${param.logout}">
-                        <div th:fragment="alert (type, message)" class="alert alert-dismissable"
-                             th:classappend="'alert-danger'">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
-                            </button>
-                            <span th:text="'You have been logged out.'"></span>
-                        </div>
-                    </div>
-                    <div th:if="${param.error}">
-                        <div th:fragment="alert (type, message)" class="alert alert-dismissable"
-                             th:classappend="'alert-danger'">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
-                            </button>
-                            <span th:text="'Invalid username and/or  password.'"></span>
-                        </div>
-                    </div>
-                </div>
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular-resource.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular-route.js"></script>
+    <link href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
 
-                <div class="control-group">
-                    <!-- Button -->
-                    <div class="controls">
-                        <button class="btn btn-success">Login</button>
-                    </div>
-                </div>
+    <link href="../static/css/style.css"
+          th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
 
+    <title>Numismatic</title>
+</head>
+<body>
+<div class="content">
+    <!-- Navbar -->
+    <div th:include="navbar"></div>
+    <!-- Navbar -->
+
+    <form th:action="@{/login}" method="post">
+        <div class="container" style="padding-top: 30px">
+            <div class="row text-black">
+                <div class="col-md-2">
+                    <label> User Name : </label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" placeholder="Username" name="username" width="100%"/>
+                </div>
             </div>
-        </form>
-    </div>
-    </body>
+            <div class="row text-black">
+                <div class="col-md-2">
+                    <label> Password : </label>
+                </div>
+                <div class="col-md-10">
+                    <input type="password" placeholder="Password" name="password" width="100%"/>
+                </div>
+            </div>
+            <div class="row">
+                <div th:if="${param.logout}">
+                    <div th:fragment="alert (type, message)" class="alert alert-dismissable"
+                         th:classappend="'alert-danger'">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                        </button>
+                        <span th:text="'You have been logged out.'"></span>
+                    </div>
+                </div>
+                <div th:if="${param.error}">
+                    <div th:fragment="alert (type, message)" class="alert alert-dismissable"
+                         th:classappend="'alert-danger'">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                        </button>
+                        <span th:text="'Invalid username and/or  password.'"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                    <button class="btn btn-success">Login</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    <!-- Footer -->
+    <div th:include="footer"></div>
+    <!-- Footer --->
+</div>
+</body>
 </html>
