@@ -23,13 +23,17 @@ public class Monety {
     private Panujacy panujacyByPanujacyId;
     private Mennice menniceByMennicaId;
 
+    public Monety() {
+        super();
+    }
+
     @Id
     @Column(name = "id", nullable = false)
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -39,7 +43,7 @@ public class Monety {
         return uid;
     }
 
-    public void setUid(String uid) {
+    public void setUid(final String uid) {
         this.uid = uid;
     }
 
@@ -49,7 +53,7 @@ public class Monety {
         return nazwa;
     }
 
-    public void setNazwa(String nazwa) {
+    public void setNazwa(final String nazwa) {
         this.nazwa = nazwa;
     }
 

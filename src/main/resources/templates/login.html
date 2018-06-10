@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title> Numismatic </title>
+</head>
+
+<body>
+<div layout:fragment="content" th:remove="tag">
+
+    <form th:action="@{/login}" method="post">
+        <div class="container" style="padding-top: 30px">
+            <div class="row text-black">
+                <div class="col-md-2">
+                    <label> User Name : </label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" placeholder="Username" name="username" width="100%"/>
+                </div>
+            </div>
+            <div class="row text-black">
+                <div class="col-md-2">
+                    <label> Password : </label>
+                </div>
+                <div class="col-md-10">
+                    <input type="password" placeholder="Password" name="password" width="100%"/>
+                </div>
+            </div>
+            <div class="row">
+                <div th:if="${param.logout}">
+                    <div th:fragment="alert (type, message)" class="alert alert-dismissable"
+                         th:classappend="'alert-danger'">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                        </button>
+                        <span th:text="'You have been logged out.'"></span>
+                    </div>
+                </div>
+                <div th:if="${param.error}">
+                    <div th:fragment="alert (type, message)" class="alert alert-dismissable"
+                         th:classappend="'alert-danger'">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                        </button>
+                        <span th:text="'Invalid username and/or  password.'"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                    <button class="btn btn-success">Login</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

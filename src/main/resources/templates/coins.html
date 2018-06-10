@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+		<meta charset="utf-8">
+    <title> Numismatic - coins </title>
+</head>
+
+<body>
+<div layout:fragment="content" th:remove="tag">
+
+    <section>
+        <div class="margin">
+        <table>
+            <caption>Monety</caption>
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Uid</th>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Waga</th>
+                <th scope="col">Próba</th>
+                <th scope="col">Cena (PLN)</th>
+                <th scope="col">Rok</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="coin : ${allCoins}">
+								<td th:text="${coin.id}">id</td>
+                <td th:text="${coin.uid}">uid</td>
+                <td><a th:href="@{/moneta/{id}(id=${coin.id})}" th:text="${coin.nazwa}" href="#">nazwa</a></td>
+                <td th:text="${coin.waga}">waga</td>
+                <td th:text="${coin.proba}">próba</td>
+                <td th:text="${coin.cena}">cena</td>
+                <td th:text="${coin.rok}">rok</td>
+
+                    <!-- <td th:condition="!empty : coin.kruszceByKruszecId" th:text=...>
+                        none (default)
+                        <ul th:condition>
+                            <li th:each="ore : ${coin.kruszceByKruszecId}" th:text="${ore.typ}"></li>
+                        </ul>
+                    </td> -->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
