@@ -64,14 +64,14 @@ public class AdminController {
     @RequestMapping("/admin")
     public String adminSite(Model model) {
         model.addAttribute("coin", new Monety());
-        return "admin";
+        return "/admin/admin";
     }
 
     @RequestMapping(value="/admin", params={"save"})
     public String addCoinFormSubmit(@ModelAttribute Monety coin) {
         this.coinService.add(coin);
         //model.clear();
-        return "redirect:/admin";
+        return "redirect:/admin/admin";
     }
 
 

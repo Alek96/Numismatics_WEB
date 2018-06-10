@@ -1,29 +1,12 @@
-<!DOCTYPE html>
-<html lang="pl-PL" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="/webjars/angularjs/1.6.9/angular.js"></script>
-    <script src="/webjars/angularjs/1.6.9/angular-resource.js"></script>
-    <script src="/webjars/angularjs/1.6.9/angular-route.js"></script>
-    <link href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
-          th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
-    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
-
-    <link href="../static/css/style.css"
-          th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
-
-    <title>Numismatic</title>
+    <title> Numismatic </title>
 </head>
 
 <body>
-<div class="content">
-    <!-- Navbar -->
-    <div th:include="navbar"></div>
-    <!-- Navbar -->
+<div layout:fragment="content" th:remove="tag">
 
     <div class="starter-template">
         <h1>403 - Access is denied</h1>
@@ -32,9 +15,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <div th:include="footer"></div>
-    <!-- Footer --->
 </div>
 </body>
 </html>

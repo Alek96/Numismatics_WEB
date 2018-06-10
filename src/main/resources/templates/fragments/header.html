@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <header>
 <th:block th:fragment="header">
     <img src="../static/images/Header.png" alt="Header" class="center" th:src="@{/images/Header.png}">
@@ -21,13 +22,15 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/monety}">Monety</a>
                 </li>
-                <li class="nav-item" th:if="${(param.player == null)}">
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/admin}">Admin</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAnonymous()">
                     <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
-                <li class="button" th:if="${(param.player != null)}">
+                <li class="nav-item" sec:authorize="isAuthenticated()">
                     <a class="nav-link" th:href="@{/logout}">Logout</a>
                 </li>
-
             </ul>
         </div>
 
