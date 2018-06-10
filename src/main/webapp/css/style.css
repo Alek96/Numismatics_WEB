@@ -18,7 +18,7 @@ body {
 
 #body {
     padding: 10px;
-    padding-bottom: 188px; /* Height of the footer */
+    padding-bottom: 200px; /* Height of the footer */
 }
 
 #container {
@@ -37,7 +37,7 @@ body {
 
 footer {
     /*margi-top: auto;*/
-    position: relative;
+    position: absolute;
     background: black;
     border-top: goldenrod 1px solid;
     bottom: 0;
