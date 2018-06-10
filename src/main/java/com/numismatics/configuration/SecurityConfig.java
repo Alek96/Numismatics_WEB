@@ -1,25 +1,33 @@
 package com.numismatics.configuration;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
-@EnableWebSecurity
+//@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+//    @Autowired
+    private AccessDeniedHandler accessDeniedHandler;
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
+        httpSecurity.csrf().disable()
                 .authorizeRequests()
-                    .antMatchers("/", "/index", "/kontakt", "/monety", "/admin", "/js/**", "/css/**", "/images/**", "/webjars/**").permitAll()
+                    .antMatchers(
+                            "/", "/index", "/kontakt", "/monety", "/admin",
+                            "/js/**",
+                            "/css/**",
+                            "/images/**",
+                            "/webjars/**").permitAll()
+                    .antMatchers("/admin/**").hasAnyRole("ADMIN")
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
@@ -27,23 +35,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll()
                     .and()
                 .logout()
+                    .invalidateHttpSession(true)
+                    .clearAuthentication(true)
                     .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                     .logoutSuccessUrl("/")
-                    .permitAll();
-
+                    .permitAll()
+                    .and()
+                .exceptionHandling()
+                    .accessDeniedHandler(accessDeniedHandler);
     }
 
-    @Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-        UserDetails user =
-                User.withDefaultPasswordEncoder()
-                        .username("user")
-                        .password("password")
-                        .roles("USER")
-                        .build();
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
-        return new InMemoryUserDetailsManager(user);
+        auth.inMemoryAuthentication()
+                .withUser("admin").password("password").roles("ADMIN");
     }
-
 }

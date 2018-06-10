@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <header>
+<th:block th:fragment="header">
     <img src="../static/images/Header.png" alt="Header" class="center" th:src="@{/images/Header.png}">
     <nav class="navbar navbar-expand-lg navbar-dark bg-black" th:fragment="navbar">
 
@@ -14,26 +13,25 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home
-                    </a>
+                    <a class="nav-link" th:href="@{/}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/kontakt">Kontakt</a>
+                    <a class="nav-link" th:href="@{/kontakt}">Kontakt</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/monety">Monety</a>
+                    <a class="nav-link" th:href="@{/monety}">Monety</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                <li class="nav-item" th:if="${(param.player == null)}">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
-                <li class="button">
-                    <form th:action="@{/logout}" method="post">
-                        <button class="btn btn-danger">Logout</button>
-                    </form>
+                <li class="button" th:if="${(param.player != null)}">
+                    <a class="nav-link" th:href="@{/logout}">Logout</a>
                 </li>
+
             </ul>
         </div>
 
     </nav>
+</th:block>
 </header>
 </html>
