@@ -4,28 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-          th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
-    <link href="../css/style.css"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.1.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular-resource.js"></script>
+    <script src="/webjars/angularjs/1.6.9/angular-route.js"></script>
+
+    <link href="../static/css/style.css"
           th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
     <title> Numismatic </title>
 </head>
 
-<header>
-    <img src="../images/Header.png" alt="Header" class="center" th:src="@{/images/Header.png}">
-</header>
-
 <body>
-<div class="margin">
+<div id="content">
+    <!-- Navbar -->
     <div th:include="navbar"></div>
-    <h1>Hello</h1>
-    <h2>This is a sample text!</h2>
+    <!-- Navbar -->
+
+    <div id="body">
+        <div class="margin">
+            To<br>
+            jest<br>
+            tekst,<br>
+            aby<br>
+            strona<br>
+            dzialala<br>
+            poprawnie,<br>
+            a<br>
+            wiec<br>
+            sa<br>
+            tutaj<br>
+            newline'y<br>
+            do<br>
+            konca<br>
+            strony,<br>
+            tak<br>
+            aby<br>
+            stopka<br>
+            byla<br>
+            na<br>
+            jej<br>
+            koncu<br>
+            KURWA<br>
+            KURWA!<br>
+            KURWA!!<br>
+            KURWA!!!<br>
+            <br>
+            Chwila<br>
+            chyba<br>
+            mam<br>
+            pomysl<br>
+            <br>
+            O kurwa!<br>
+            DZIALA<br>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div th:include="footer"></div>
+    <!-- Footer --->
 </div>
-<footer>
-    <img src="../images/Stopka.png" alt="Footer" class="center" th:src="@{/images/Stopka.png}">
-</footer>
 </body>
 </html>
