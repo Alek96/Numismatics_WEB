@@ -7,7 +7,7 @@ import java.util.Collection;
  * Created by Eoller on 28-May-18.
  */
 @Entity
-@Table(name = "typy_krajow", schema = "public", catalog = "dde690ho440f18")
+@Table(name = "typy_krajow", schema = "public")
 public class TypyKrajow {
     private Integer id;
     private String nazwa;
